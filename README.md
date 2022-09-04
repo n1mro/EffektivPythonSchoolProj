@@ -1,2 +1,2 @@
 # EffektivPythonSchoolProj
-My project for a course in efficient python programing
+My project for a course in efficient python programming
