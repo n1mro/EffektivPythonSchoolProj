@@ -1,0 +1,47 @@
+{% extends 'basetemplate.html' %}
+
+{% block title %}
+Persons
+{% endblock title%}
+
+{% block content %}
+<H1>Persons</H1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>County</th>
+            <th>Go To Person Page</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for person in pagination.items %}
+        <tr>
+            <td>{{person.name}}</td>
+            <td>{{person.country}}</td>
+            <td><a href="{{url_for('persons.person_page', name=person.name)}}"><button>Go to</button></a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<div class="pagination">
+
+    {% if pagination.has_prev %}
+    <a href="{{url_for('persons.list_persons', page=page-1)}}">&laquo;</a>
+    {% else %}
+    <a href="#">&laquo;</a>
+    {% endif %}
+
+    <a href="#" class="active">{{page}}</a>
+    
+    {% if pagination.has_next %}
+    <a href="{{url_for('persons.list_persons', page=page+1)}}">&raquo;</a>
+    {% else %}
+    <a href="#">&raquo;</a>
+    {% endif %}
+</div>
+
+
+{% endblock content %}

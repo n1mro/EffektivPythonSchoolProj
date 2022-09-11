@@ -1,0 +1,32 @@
+{% extends 'basetemplate.html' %}
+
+{% block title %}
+Person
+{% endblock title%}
+
+{% block content %}
+<H1>Persons</H1>
+
+<table id="customers">
+    <thead>
+        <th>Name</th>
+        <th>County</th>
+        <th>Personal ID Number</th>
+        <th>City</th>
+        <th>Profession</th>
+        <th>Phone Number</th>
+        <th>ID</th>
+    </thead>
+    <tbody>
+        <td>{{person.name}}</td>
+        <td>{{person.country}}</td>
+        <td>{{person.personal_id_number}}</td>
+        <td>{{person.city}}</td>
+        <td>{{person.profession}}</td>
+        <td>{{person.phone_number}}</td>
+        <td>{{person.id}}</td>
+    </tbody>
+</table>
+
+
+{% endblock content %}
