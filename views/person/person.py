@@ -1,4 +1,3 @@
-from pydoc import pager
 from typing import Optional
 from flask import Blueprint, render_template, request
 from models import Person, lru_decorator
